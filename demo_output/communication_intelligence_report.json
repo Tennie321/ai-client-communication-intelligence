@@ -1,0 +1,413 @@
+{
+  "generated_at": "2026-07-18 12:36 UTC",
+  "version": "1.0.0",
+  "total_clients": 12,
+  "total_monthly_revenue": 60100.0,
+  "total_lifetime_value": 1723200.0,
+  "clients": [
+    {
+      "name": "Delta Professional Services",
+      "tier": "Platinum",
+      "monthly_revenue": 12000.0,
+      "contract_months": 36,
+      "lifetime_value": 432000.0,
+      "touches_last_30d": 4,
+      "touches_target": 8,
+      "touch_deficit": 4,
+      "gap_days": 22,
+      "avg_response_hours": 8.0,
+      "response_time_target": 2,
+      "sentiment": 4.2,
+      "channels_used": [
+        "email",
+        "slack"
+      ],
+      "channels_target": [
+        "phone",
+        "video",
+        "email",
+        "slack"
+      ],
+      "channel_gap": 2,
+      "risk_score": 100,
+      "risk_level": "critical",
+      "risk_color": "#dc2626",
+      "risk_label": "Critical \u2014 Immediate Attention",
+      "recommendations": [
+        "Increase monthly touches by 4 to reach the Platinum tier target of 8/mo",
+        "Client hasn't been contacted in 22 days \u2014 schedule re-engagement within 48 hours",
+        "Improve average response time from 8h to under 2h target",
+        "Low satisfaction score detected \u2014 schedule a health check call and send satisfaction survey",
+        "Expand to ['phone', 'video'] channels beyond just email, slack"
+      ],
+      "next_best_touch": "Personal re-engagement email + phone call",
+      "qbr_frequency": "monthly"
+    },
+    {
+      "name": "Evergreen Nonprofit",
+      "tier": "Bronze",
+      "monthly_revenue": 800.0,
+      "contract_months": 6,
+      "lifetime_value": 4800.0,
+      "touches_last_30d": 1,
+      "touches_target": 2,
+      "touch_deficit": 1,
+      "gap_days": 28,
+      "avg_response_hours": 48.0,
+      "response_time_target": 24,
+      "sentiment": 3.5,
+      "channels_used": [
+        "email"
+      ],
+      "channels_target": [
+        "email"
+      ],
+      "channel_gap": 0,
+      "risk_score": 100,
+      "risk_level": "critical",
+      "risk_color": "#dc2626",
+      "risk_label": "Critical \u2014 Immediate Attention",
+      "recommendations": [
+        "Increase monthly touches by 1 to reach the Bronze tier target of 2/mo",
+        "Client hasn't been contacted in 28 days \u2014 schedule re-engagement within 48 hours",
+        "Improve average response time from 48h to under 24h target",
+        "Low satisfaction score detected \u2014 schedule a health check call and send satisfaction survey"
+      ],
+      "next_best_touch": "Personal re-engagement email + phone call",
+      "qbr_frequency": "semi-annual"
+    },
+    {
+      "name": "Ironclad Insurance Group",
+      "tier": "Gold",
+      "monthly_revenue": 5600.0,
+      "contract_months": 24,
+      "lifetime_value": 134400.0,
+      "touches_last_30d": 3,
+      "touches_target": 5,
+      "touch_deficit": 2,
+      "gap_days": 18,
+      "avg_response_hours": 12.0,
+      "response_time_target": 4,
+      "sentiment": 5.0,
+      "channels_used": [
+        "email"
+      ],
+      "channels_target": [
+        "email",
+        "phone",
+        "slack"
+      ],
+      "channel_gap": 2,
+      "risk_score": 100,
+      "risk_level": "high",
+      "risk_color": "#ea580c",
+      "risk_label": "High Risk",
+      "recommendations": [
+        "Increase monthly touches by 2 to reach the Gold tier target of 5/mo",
+        "Client hasn't been contacted in 18 days \u2014 schedule re-engagement within 48 hours",
+        "Improve average response time from 12h to under 4h target",
+        "Low satisfaction score detected \u2014 schedule a health check call and send satisfaction survey",
+        "Expand to ['email', 'phone'] channels beyond just email"
+      ],
+      "next_best_touch": "Personal re-engagement email + phone call",
+      "qbr_frequency": "quarterly"
+    },
+    {
+      "name": "Kairos Media Agency",
+      "tier": "Bronze",
+      "monthly_revenue": 1100.0,
+      "contract_months": 3,
+      "lifetime_value": 3300.0,
+      "touches_last_30d": 0,
+      "touches_target": 2,
+      "touch_deficit": 2,
+      "gap_days": 35,
+      "avg_response_hours": 72.0,
+      "response_time_target": 24,
+      "sentiment": 2.0,
+      "channels_used": [
+        "email"
+      ],
+      "channels_target": [
+        "email"
+      ],
+      "channel_gap": 0,
+      "risk_score": 100,
+      "risk_level": "critical",
+      "risk_color": "#dc2626",
+      "risk_label": "Critical \u2014 Immediate Attention",
+      "recommendations": [
+        "Increase monthly touches by 2 to reach the Bronze tier target of 2/mo",
+        "Client hasn't been contacted in 35 days \u2014 schedule re-engagement within 48 hours",
+        "Improve average response time from 72h to under 24h target",
+        "Low satisfaction score detected \u2014 schedule a health check call and send satisfaction survey"
+      ],
+      "next_best_touch": "Personal re-engagement email + phone call",
+      "qbr_frequency": "semi-annual"
+    },
+    {
+      "name": "Coastal Retail Group",
+      "tier": "Silver",
+      "monthly_revenue": 1800.0,
+      "contract_months": 12,
+      "lifetime_value": 21600.0,
+      "touches_last_30d": 2,
+      "touches_target": 3,
+      "touch_deficit": 1,
+      "gap_days": 14,
+      "avg_response_hours": 6.5,
+      "response_time_target": 8,
+      "sentiment": 6.8,
+      "channels_used": [
+        "email"
+      ],
+      "channels_target": [
+        "email"
+      ],
+      "channel_gap": 0,
+      "risk_score": 43.5,
+      "risk_level": "high",
+      "risk_color": "#ea580c",
+      "risk_label": "High Risk",
+      "recommendations": [
+        "Increase monthly touches by 1 to reach the Silver tier target of 3/mo",
+        "Client hasn't been contacted in 14 days \u2014 schedule re-engagement within 48 hours"
+      ],
+      "next_best_touch": "Value-add email (case study, tip, industry insight)",
+      "qbr_frequency": "quarterly"
+    },
+    {
+      "name": "Luna Tech Startups Inc.",
+      "tier": "Gold",
+      "monthly_revenue": 3800.0,
+      "contract_months": 12,
+      "lifetime_value": 45600.0,
+      "touches_last_30d": 5,
+      "touches_target": 5,
+      "touch_deficit": 0,
+      "gap_days": 7,
+      "avg_response_hours": 3.0,
+      "response_time_target": 4,
+      "sentiment": 7.2,
+      "channels_used": [
+        "email",
+        "phone"
+      ],
+      "channels_target": [
+        "email",
+        "phone",
+        "slack"
+      ],
+      "channel_gap": 1,
+      "risk_score": 26.5,
+      "risk_level": "low",
+      "risk_color": "#16a34a",
+      "risk_label": "Low Risk",
+      "recommendations": [
+        "Expand to ['email', 'phone'] channels beyond just email, phone"
+      ],
+      "next_best_touch": "Scheduled check-in (on track)",
+      "qbr_frequency": "quarterly"
+    },
+    {
+      "name": "GreenLeaf Consulting",
+      "tier": "Silver",
+      "monthly_revenue": 2200.0,
+      "contract_months": 9,
+      "lifetime_value": 19800.0,
+      "touches_last_30d": 3,
+      "touches_target": 3,
+      "touch_deficit": 0,
+      "gap_days": 8,
+      "avg_response_hours": 5.0,
+      "response_time_target": 8,
+      "sentiment": 7.5,
+      "channels_used": [
+        "email",
+        "phone"
+      ],
+      "channels_target": [
+        "email"
+      ],
+      "channel_gap": 0,
+      "risk_score": 20.3,
+      "risk_level": "low",
+      "risk_color": "#16a34a",
+      "risk_label": "Low Risk",
+      "recommendations": [
+        "Client hasn't been contacted in 8 days \u2014 schedule re-engagement within 48 hours"
+      ],
+      "next_best_touch": "Scheduled check-in (on track)",
+      "qbr_frequency": "quarterly"
+    },
+    {
+      "name": "Jupiter E-Commerce",
+      "tier": "Silver",
+      "monthly_revenue": 1600.0,
+      "contract_months": 6,
+      "lifetime_value": 9600.0,
+      "touches_last_30d": 4,
+      "touches_target": 3,
+      "touch_deficit": 0,
+      "gap_days": 6,
+      "avg_response_hours": 4.5,
+      "response_time_target": 8,
+      "sentiment": 7.8,
+      "channels_used": [
+        "email",
+        "slack"
+      ],
+      "channels_target": [
+        "email"
+      ],
+      "channel_gap": 0,
+      "risk_score": 17.2,
+      "risk_level": "healthy",
+      "risk_color": "#059669",
+      "risk_label": "Healthy",
+      "recommendations": [],
+      "next_best_touch": "Scheduled check-in (on track)",
+      "qbr_frequency": "quarterly"
+    },
+    {
+      "name": "Fusion Tech Ventures",
+      "tier": "Gold",
+      "monthly_revenue": 3500.0,
+      "contract_months": 15,
+      "lifetime_value": 52500.0,
+      "touches_last_30d": 7,
+      "touches_target": 5,
+      "touch_deficit": 0,
+      "gap_days": 4,
+      "avg_response_hours": 3.2,
+      "response_time_target": 4,
+      "sentiment": 8.0,
+      "channels_used": [
+        "email",
+        "phone",
+        "slack"
+      ],
+      "channels_target": [
+        "email",
+        "phone",
+        "slack"
+      ],
+      "channel_gap": 0,
+      "risk_score": 14.7,
+      "risk_level": "healthy",
+      "risk_color": "#059669",
+      "risk_label": "Healthy",
+      "recommendations": [
+        "Client is in great standing \u2014 explore upsell/expansion opportunity"
+      ],
+      "next_best_touch": "Scheduled check-in (on track)",
+      "qbr_frequency": "quarterly"
+    },
+    {
+      "name": "BrightStar Marketing",
+      "tier": "Gold",
+      "monthly_revenue": 4200.0,
+      "contract_months": 18,
+      "lifetime_value": 75600.0,
+      "touches_last_30d": 6,
+      "touches_target": 5,
+      "touch_deficit": 0,
+      "gap_days": 5,
+      "avg_response_hours": 2.8,
+      "response_time_target": 4,
+      "sentiment": 8.5,
+      "channels_used": [
+        "email",
+        "phone",
+        "slack"
+      ],
+      "channels_target": [
+        "email",
+        "phone",
+        "slack"
+      ],
+      "channel_gap": 0,
+      "risk_score": 12.3,
+      "risk_level": "healthy",
+      "risk_color": "#059669",
+      "risk_label": "Healthy",
+      "recommendations": [
+        "Client is in great standing \u2014 explore upsell/expansion opportunity"
+      ],
+      "next_best_touch": "Scheduled check-in (on track)",
+      "qbr_frequency": "quarterly"
+    },
+    {
+      "name": "Acme SaaS Solutions",
+      "tier": "Platinum",
+      "monthly_revenue": 8500.0,
+      "contract_months": 24,
+      "lifetime_value": 204000.0,
+      "touches_last_30d": 9,
+      "touches_target": 8,
+      "touch_deficit": 0,
+      "gap_days": 3,
+      "avg_response_hours": 1.5,
+      "response_time_target": 2,
+      "sentiment": 9.2,
+      "channels_used": [
+        "email",
+        "phone",
+        "slack",
+        "video"
+      ],
+      "channels_target": [
+        "phone",
+        "video",
+        "email",
+        "slack"
+      ],
+      "channel_gap": 0,
+      "risk_score": 6.8,
+      "risk_level": "healthy",
+      "risk_color": "#059669",
+      "risk_label": "Healthy",
+      "recommendations": [
+        "Client is in great standing \u2014 explore upsell/expansion opportunity"
+      ],
+      "next_best_touch": "Scheduled check-in (on track)",
+      "qbr_frequency": "monthly"
+    },
+    {
+      "name": "Horizon Health AI",
+      "tier": "Platinum",
+      "monthly_revenue": 15000.0,
+      "contract_months": 48,
+      "lifetime_value": 720000.0,
+      "touches_last_30d": 10,
+      "touches_target": 8,
+      "touch_deficit": 0,
+      "gap_days": 1,
+      "avg_response_hours": 0.8,
+      "response_time_target": 2,
+      "sentiment": 9.8,
+      "channels_used": [
+        "email",
+        "phone",
+        "slack",
+        "video"
+      ],
+      "channels_target": [
+        "phone",
+        "video",
+        "email",
+        "slack"
+      ],
+      "channel_gap": 0,
+      "risk_score": 1.9,
+      "risk_level": "healthy",
+      "risk_color": "#059669",
+      "risk_label": "Healthy",
+      "recommendations": [
+        "Client is in great standing \u2014 explore upsell/expansion opportunity"
+      ],
+      "next_best_touch": "Scheduled check-in (on track)",
+      "qbr_frequency": "monthly"
+    }
+  ]
+}

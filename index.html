@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Agency Client Communication Intelligence Tool</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#0a0a0f;color:#e5e7eb;overflow-x:hidden}
+.gradient-bg{position:fixed;top:0;left:0;right:0;bottom:0;z-index:0;
+  background:linear-gradient(135deg,#0a0a0f 0%,#111318 25%,#0f0a1a 50%,#0a0a0f 75%,#111318 100%);
+  background-size:400% 400%;animation:gradientShift 15s ease infinite}
+@keyframes gradientShift{0%{background-position:0% 50%}25%{background-position:100% 0%}50%{background-position:100% 100%}75%{background-position:0% 100%}100%{background-position:0% 50%}}
+.gradient-orb{position:fixed;border-radius:50%;filter:blur(80px);opacity:0.15;z-index:0}
+.orb1{width:600px;height:600px;top:-200px;right:-200px;background:#3b82f6;animation:orbFloat 20s ease-in-out infinite}
+.orb2{width:500px;height:500px;bottom:-150px;left:-150px;background:#8b5cf6;animation:orbFloat 25s ease-in-out infinite reverse}
+.orb3{width:400px;height:400px;top:50%;left:50%;transform:translate(-50%,-50%);background:#ec4899;animation:orbFloat 18s ease-in-out infinite 5s}
+@keyframes orbFloat{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(30px,-40px) scale(1.1)}66%{transform:translate(-20px,30px) scale(0.9)}}
+.container{position:relative;z-index:1;max-width:1100px;margin:0 auto;padding:0 24px}
+nav{display:flex;justify-content:space-between;align-items:center;padding:20px 0;border-bottom:1px solid rgba(255,255,255,0.05)}
+.logo{font-size:1.2em;font-weight:700;background:linear-gradient(90deg,#60a5fa,#a78bfa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+nav a{color:#9ca3af;text-decoration:none;font-size:0.9em;margin-left:24px;transition:color 0.2s}
+nav a:hover{color:#60a5fa}
+.hero{text-align:center;padding:100px 0 60px}
+.hero h1{font-size:3.2em;font-weight:800;line-height:1.15;margin-bottom:24px}
+.hero h1 .gradient{background:linear-gradient(135deg,#60a5fa,#a78bfa,#f472b6,#fb923c);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;background-size:300% 300%;animation:gradientText 6s ease infinite}
+@keyframes gradientText{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+.hero p{font-size:1.2em;color:#9ca3af;max-width:700px;margin:0 auto 40px;line-height:1.6}
+.cta-group{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+.cta{display:inline-block;padding:14px 36px;border-radius:8px;font-weight:600;font-size:1em;text-decoration:none;transition:all 0.3s}
+.cta-primary{background:linear-gradient(135deg,#3b82f6,#8b5cf6);color:#fff;box-shadow:0 4px 20px rgba(59,130,246,0.3)}
+.cta-primary:hover{transform:translateY(-2px);box-shadow:0 6px 30px rgba(59,130,246,0.5)}
+.cta-secondary{border:1px solid #374151;color:#e5e7eb;background:rgba(255,255,255,0.03)}
+.cta-secondary:hover{background:rgba(255,255,255,0.08);border-color:#6366f1}
+.badge{display:inline-block;padding:6px 14px;border-radius:20px;font-size:0.85em;font-weight:600;margin-bottom:20px}
+.badge-tech{background:rgba(59,130,246,0.15);color:#60a5fa;border:1px solid rgba(59,130,246,0.3)}
+.section{padding:80px 0}
+.section h2{font-size:2.2em;font-weight:700;text-align:center;margin-bottom:16px}
+.section .overline{text-align:center;color:#60a5fa;font-size:0.9em;font-weight:600;text-transform:uppercase;letter-spacing:0.15em;margin-bottom:8px}
+.section .subtitle{text-align:center;color:#9ca3af;max-width:600px;margin:0 auto 48px;font-size:1.05em;line-height:1.6}
+.features-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px}
+.feature-card{background:rgba(17,19,24,0.8);border:1px solid #1f2937;border-radius:12px;padding:28px;transition:all 0.3s}
+.feature-card:hover{border-color:#374151;transform:translateY(-2px);box-shadow:0 8px 30px rgba(0,0,0,0.2)}
+.feature-card .icon{font-size:2em;margin-bottom:12px}
+.feature-card h3{font-size:1.15em;font-weight:600;margin-bottom:8px}
+.feature-card p{color:#9ca3af;font-size:0.95em;line-height:1.5}
+.pricing-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;max-width:960px;margin:0 auto}
+.pricing-card{background:rgba(17,19,24,0.8);border:1px solid #1f2937;border-radius:16px;padding:32px;text-align:center;transition:all 0.3s;position:relative}
+.pricing-card:hover{border-color:#374151;transform:translateY(-4px)}
+.pricing-card.featured{border-color:#3b82f6;background:rgba(59,130,246,0.05)}
+.pricing-card.featured::before{content:"BEST VALUE";position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:linear-gradient(90deg,#3b82f6,#8b5cf6);padding:4px 16px;border-radius:12px;font-size:0.75em;font-weight:700;letter-spacing:0.1em}
+.pricing-card h3{font-size:1.1em;font-weight:600;margin-bottom:8px;color:#d1d5db}
+.pricing-card .price{font-size:3em;font-weight:800;margin:16px 0}
+.pricing-card .price span{font-size:0.35em;font-weight:400;color:#9ca3af}
+.pricing-card ul{list-style:none;padding:0;margin:20px 0;text-align:left}
+.pricing-card ul li{padding:8px 0;font-size:0.9em;color:#9ca3af;border-bottom:1px solid rgba(255,255,255,0.03)}
+.pricing-card ul li:before{content:"✓ ";color:#16a34a;font-weight:700}
+.pricing-card .cta{width:100%;text-align:center;margin-top:16px}
+.faq-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(400px,1fr));gap:20px}
+.faq-item{background:rgba(17,19,24,0.5);border:1px solid #1f2937;border-radius:10px;padding:20px}
+.faq-item h4{font-size:1em;font-weight:600;margin-bottom:8px}
+.faq-item p{color:#9ca3af;font-size:0.9em;line-height:1.5}
+.cta-section{text-align:center;padding:80px 0;border-top:1px solid #1f2937}
+.cta-section h2{font-size:2.2em;font-weight:700;margin-bottom:16px}
+.cta-section p{color:#9ca3af;max-width:500px;margin:0 auto 32px;font-size:1.05em}
+.email-box{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.email-box input{padding:14px 20px;border-radius:8px;border:1px solid #374151;background:rgba(255,255,255,0.03);color:#e5e7eb;font-size:1em;width:320px;outline:none;transition:border-color 0.2s}
+.email-box input:focus{border-color:#3b82f6}
+.email-box button{padding:14px 28px;border-radius:8px;border:none;background:linear-gradient(135deg,#3b82f6,#8b5cf6);color:#fff;font-weight:600;font-size:1em;cursor:pointer;transition:all 0.3s}
+.email-box button:hover{transform:translateY(-2px);box-shadow:0 4px 20px rgba(59,130,246,0.3)}
+footer{text-align:center;padding:32px 0;border-top:1px solid #1f2937;color:#4b5563;font-size:0.85em}
+footer a{color:#6b7280;text-decoration:none}
+footer a:hover{color:#60a5fa}
+@media(max-width:768px){
+  .hero h1{font-size:2.2em}
+  .hero{padding:60px 0 40px}
+  .section{padding:40px 0}
+  .faq-grid{grid-template-columns:1fr}
+  .pricing-grid{grid-template-columns:1fr;max-width:400px}
+}
+</style>
+</head>
+<body>
+<div class="gradient-bg"></div>
+<div class="gradient-orb orb1"></div>
+<div class="gradient-orb orb2"></div>
+<div class="gradient-orb orb3"></div>
+
+<div class="container">
+<nav>
+  <div class="logo">&#128202; CommIntel</div>
+  <div>
+    <a href="#features">Features</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#faq">FAQ</a>
+    <a href="https://github.com/Tennie321/ai-client-communication-intelligence" target="_blank">GitHub</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <span class="badge badge-tech">&#9889; Zero-Dependency Python CLI</span>
+  <h1>Catch At-Risk Clients<br><span class="gradient">Before They Ghost You</span></h1>
+  <p>Analyze communication patterns across your entire client portfolio in seconds. Identify who's disengaging, who's ready to expand, and exactly what to do about it — with a single command.</p>
+  <div class="cta-group">
+    <a href="#pricing" class="cta cta-primary">Get the Tool &rarr;</a>
+    <a href="https://github.com/Tennie321/ai-client-communication-intelligence" class="cta cta-secondary">View on GitHub</a>
+  </div>
+</section>
+
+<section class="section" id="features">
+  <p class="overline">Features</p>
+  <h2>Portfolio Intelligence at a Glance</h2>
+  <p class="subtitle">Stop guessing which clients need attention. The tool scores every account on 5 dimensions and tells you who to call — and what to say.</p>
+  <div class="features-grid">
+    <div class="feature-card"><div class="icon">&#128202;</div><h3>Multi-Dimensional Risk Scoring</h3><p>Touch frequency, response times, communication gaps, sentiment analysis, and channel diversity — each weighted into a single 0-100 risk score per client.</p></div>
+    <div class="feature-card"><div class="icon">&#127912;</div><h3>Interactive HTML Dashboard</h3><p>Radial risk gauges, color-coded status badges, and prioritized action items — export a professional dashboard ready to present in any client review meeting.</p></div>
+    <div class="feature-card"><div class="icon">&#128308;</div><h3>5-Level Risk Triage</h3><p>Critical (immediate attention) → High → Moderate → Low → Healthy. Each level triggers specific next-action recommendations for account managers.</p></div>
+    <div class="feature-card"><div class="icon">&#128200;</div><h3>4-Tier Client Segmentation</h3><p>Platinum → Gold → Silver → Bronze with configurable touchpoint targets, response-time SLAs, and optimal channel mixes per tier.</p></div>
+    <div class="feature-card"><div class="icon">&#128221;</div><h3>Actionable Recommendations</h3><p>Every client gets a prioritized action plan: "Increase touches by 3 this month", "Schedule re-engagement call", "Explore upsell opportunity".</p></div>
+    <div class="feature-card"><div class="icon">&#128230;</div><h3>Multiple Export Formats</h3><p>HTML dashboard for stakeholders, JSON for API integration, Markdown for Slack/email sharing. CSV and JSON input supported.</p></div>
+  </div>
+</section>
+
+<section class="section" id="pricing">
+  <p class="overline">Pricing</p>
+  <h2>Choose Your Plan</h2>
+  <p class="subtitle">One CLI. Unlimited clients. No recurring fees.</p>
+  <div class="pricing-grid">
+    <div class="pricing-card">
+      <h3>Standalone License</h3>
+      <div class="price">$14<span>/once</span></div>
+      <ul>
+        <li>Full Python CLI tool</li>
+        <li>Unlimited client analysis</li>
+        <li>HTML dashboard export</li>
+        <li>JSON &amp; Markdown reports</li>
+        <li>Commercial use</li>
+      </ul>
+      <a href="#" class="cta cta-primary">Buy Now &rarr;</a>
+    </div>
+    <div class="pricing-card featured">
+      <h3>Revenue Toolkit Bundle</h3>
+      <div class="price">$37<span>/once</span></div>
+      <ul>
+        <li>This tool + 7 more agency tools</li>
+        <li>Cold Email Swipe File (180 templates)</li>
+        <li>Client Feedback Analyzer</li>
+        <li>Retention &amp; Expansion Prompt Pack</li>
+        <li>All future updates</li>
+      </ul>
+      <a href="https://tennie321.github.io/ai-revenue-toolkit/" class="cta cta-primary">Get the Bundle &rarr;</a>
+    </div>
+    <div class="pricing-card">
+      <h3>Agency License</h3>
+      <div class="price">$97<span>/once</span></div>
+      <ul>
+        <li>Everything in Standalone</li>
+        <li>White-label reports</li>
+        <li>Team training materials</li>
+        <li>Priority support</li>
+        <li>Resell to your clients</li>
+      </ul>
+      <a href="#" class="cta cta-primary">Buy Now &rarr;</a>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="faq">
+  <p class="overline">FAQ</p>
+  <h2>Frequently Asked Questions</h2>
+  <p class="subtitle">Everything you need to know about the tool.</p>
+  <div class="faq-grid">
+    <div class="faq-item"><h4>Do I need Python experience to use it?</h4><p>Basic command-line familiarity is enough. Run <code>python3 tool.py --data clients.csv</code> and you get three reports. The sample data lets you try it in 30 seconds.</p></div>
+    <div class="faq-item"><h4>What data do I need to provide?</h4><p>A CSV (or JSON) with client names, tier/plan level, monthly revenue, touch counts, and optional sentiment scores. A sample file with 12 accounts is included.</p></div>
+    <div class="faq-item"><h4>Can I customize the tier targets?</h4><p>Absolutely. The tier configuration (touches, response time, channels) is defined at the top of the script — edit the Python dict and re-run.</p></div>
+    <div class="faq-item"><h4>Is this just for AI agencies?</h4><p>No. The tool works for any B2B service business — marketing agencies, consulting firms, SaaS companies, freelancers with multiple clients.</p></div>
+    <div class="faq-item"><h4>How is this different from a CRM report?</h4><p>CRMs show raw data. This tool scores, interprets, and prioritizes — telling you not just what's happening, but exactly what to do about each client.</p></div>
+    <div class="faq-item"><h4>What's the refund policy?</h4><p>30-day money-back guarantee. If the tool doesn't save you time or identify at-risk clients you missed, we'll refund you in full.</p></div>
+  </div>
+</section>
+
+<section class="cta-section">
+  <h2>Stop Losing Clients to Silence</h2>
+  <p>Get the Agency Client Communication Intelligence Tool and know exactly who needs your attention — before they churn.</p>
+  <div class="email-box">
+    <input type="email" placeholder="Enter your email for early-access pricing...">
+    <button>Get Updates &rarr;</button>
+  </div>
+  <p style="margin-top:12px;font-size:0.85em;color:#6b7280;">No spam. Unsubscribe anytime.</p>
+</section>
+
+<footer>
+  <p>&copy; 2026 <a href="https://github.com/Tennie321">Tennie321</a> — Built with &#128154; for AI agencies</p>
+  <p style="margin-top:4px;"><a href="https://tennie321.github.io/ai-revenue-toolkit/">AI Revenue Toolkit</a> &middot; <a href="#">Cold Email Swipe File</a> &middot; <a href="#">Client Feedback Analyzer</a></p>
+</footer>
+</div>
+</body>
+</html>

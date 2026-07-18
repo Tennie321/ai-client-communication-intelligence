@@ -1,0 +1,35 @@
+{
+  "product": {
+    "name": "Agency Client Communication Intelligence Tool",
+    "version": "1.0.0",
+    "tagline": "Stop losing clients to silence. Know who's at risk before they churn.",
+    "description": "A zero-dependency Python CLI tool that analyzes client communication patterns — touchpoint frequency, response times, sentiment scores, channel diversity — and generates a prioritized action plan with an interactive HTML dashboard. Identifies at-risk clients, recommends optimal engagement cadences per tier, and surfaces upsell-ready accounts.",
+    "pricing": {
+      "standalone": 14,
+      "bundle": 37,
+      "agency_license": 97
+    },
+    "features": [
+      "Multi-dimensional risk scoring (touches, gaps, response time, sentiment, channels)",
+      "4-tier client segmentation with configurable cadence targets",
+      "5 risk levels with color-coded prioritization (Critical → Healthy)",
+      "Interactive HTML dashboard with radial risk gauges",
+      "JSON + Markdown report exports",
+      "Zero external dependencies (Python stdlib only)",
+      "Built-in sample data generator for prototyping",
+      "CSV and JSON input support"
+    ],
+    "deliverables": [
+      "2026-07-18_ai_client_communication_intelligence.py (26KB, standalone)",
+      "sample_clients.csv (12 sample accounts across all tiers)",
+      "communication_intelligence_dashboard.html (interactive dashboard)",
+      "communication_intelligence_report.json (structured data)",
+      "communication_intelligence_report.md (executive summary)"
+    ],
+    "landing_page": "https://tennie321.github.io/ai-client-communication-intelligence/",
+    "repo": "https://github.com/Tennie321/ai-client-communication-intelligence"
+  },
+  "created": "2026-07-18",
+  "category": "Python Tool",
+  "industry": "AI Automation Agencies / Agency Operations / Client Retention"
+}

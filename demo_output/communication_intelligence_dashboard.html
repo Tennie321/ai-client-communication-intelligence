@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Agency Client Communication Intelligence Tool — Dashboard</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: #0a0a0f; color: #e5e7eb; min-height: 100vh; }
+.gradient-bar { position:fixed;top:0;left:0;right:0;height:4px;
+    background:linear-gradient(90deg,#3b82f6,#8b5cf6,#ec4899,#3b82f6);background-size:300% 100%;animation:gradient 4s ease infinite; }
+@keyframes gradient { 0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%} }
+.container { max-width: 1400px; margin: 0 auto; padding: 32px 24px; }
+header { text-align: center; padding: 40px 0 32px; }
+h1 { font-size: 2.2em; font-weight: 800;
+    background: linear-gradient(135deg, #60a5fa, #a78bfa, #f472b6);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    background-clip: text; }
+.subtitle { color: #9ca3af; font-size: 1.1em; margin-top: 8px; }
+.stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 16px; margin: 32px 0; }
+.stat-card { background: #111318; border: 1px solid #1f2937; border-radius: 12px;
+    padding: 20px; text-align: center; }
+.stat-card .value { font-size: 1.8em; font-weight: 700; }
+.stat-card .label { font-size: 0.85em; color: #9ca3af; margin-top: 4px; }
+.risk-legend { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin: 20px 0; }
+.risk-legend span { display: flex; align-items: center; gap: 6px; font-size: 0.85em; color: #d1d5db; }
+.risk-legend .dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
+table { width: 100%; border-collapse: collapse; margin-top: 24px; }
+th { text-align: left; padding: 14px 12px; font-size: 0.85em; color: #9ca3af;
+    text-transform: uppercase; letter-spacing: 0.05em; border-bottom: 2px solid #1f2937; }
+td { vertical-align: middle; }
+tr:hover { background: rgba(59,130,246,0.03); }
+.footer { text-align: center; color: #4b5563; font-size: 0.85em; padding: 32px 0 16px; }
+</style>
+</head>
+<body>
+<div class="gradient-bar"></div>
+<div class="container">
+<header>
+    <h1>&#128202; Agency Client Communication Intelligence Tool</h1>
+    <p class="subtitle">Communication Intelligence Report &middot; 2026-07-18 12:36 UTC</p>
+</header>
+
+<div class="stats">
+    <div class="stat-card"><div class="value">12</div><div class="label">Clients Analyzed</div></div>
+    <div class="stat-card"><div class="value" style="color:#16a34a;">5</div><div class="label">Healthy Clients</div></div>
+    <div class="stat-card"><div class="value" style="color:#dc2626;">7</div><div class="label">At Risk</div></div>
+    <div class="stat-card"><div class="value" style="color:#60a5fa;">$60,100</div><div class="label">Monthly MRR</div></div>
+    <div class="stat-card"><div class="value" style="color:#a78bfa;">$1,723,200</div><div class="label">Total Lifetime Value</div></div>
+    <div class="stat-card"><div class="value" style="color:#ca8a04;">6.6</div><div class="label">Avg Sentiment</div></div>
+</div>
+
+<div class="risk-legend">
+    <span><span class="dot" style="background:#dc2626;"></span>Critical — Immediate Attention</span><span><span class="dot" style="background:#ea580c;"></span>High Risk</span><span><span class="dot" style="background:#16a34a;"></span>Low Risk</span><span><span class="dot" style="background:#059669;"></span>Healthy</span>
+</div>
+
+<table>
+<thead><tr>
+    <th>Client</th><th style="text-align:center;">Status</th><th style="text-align:center;">Risk</th>
+    <th style="text-align:center;">Touches</th><th style="text-align:center;">Sentiment</th><th>Action Plan</th>
+</tr></thead>
+<tbody><tr>
+            <td style="padding:12px;border-bottom:1px solid #1f2937;">
+                <strong>Delta Professional Services</strong><br>
+                <span style="font-size:0.85em;color:#9ca3af;">Platinum · $12000/mo</span>
+            </td>
+            <td style="padding:12px;border-bottom:1px solid #1f2937;text-align:center;">
+                <span style="display:inline-block;padding:4px 12px;border-radius:12px;font-size:0.85em;font-weight:600;background:#dc262620;color:#dc2626;">
+                    Critical — Immediate Attention
+                </span>
+            </td>
+            <td style="padding:12px;border-bottom:1px solid #1f2937;text-align:center;">
+                <div style="position:relative;width:60px;height:60px;margin:0 auto;">
+                    <svg viewBox="0 0 36 36" style="width:60px;height:60px;">
+                        <circle cx="18" cy="18" r="15.9" fill="none" stroke="#1f2937" stroke-width="3"/>
+                        <circle cx="18" cy="18" r="15.9" fill="none" stroke="#dc2626" stroke-width="3"
+                            stroke-dasharray="100, 100" stroke-linecap="round" transform="rotate(-90 18 18)"/>
+                    </svg>
+                    <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:1em;font-weight:700;color:#dc2626;">100</div>
+                </div>
+            </td>
+            <td style="padding:12px;border-bottom:1px solid #1f2937;text-align:center;">
+                4 / 8<br>
+                <span style="font-size:0.85em;color:#9ca3af;">22d gap</span>
+            </td>
+            <td style="padding:12px;border-bottom:1px solid #1f2937;text-align:center;">
+                <span style="display:inline-block;font-size:1.2em;color:#dc2626">&#9733;&#9733;&#9734;&#9734;&#9734;</span><br>
+                <span style="font-size:0.85em;color:#9ca3af;">4.2/10</span>
+            </td>
+            <td style="padding:12px;border-bottom:1px solid #1f2937;">
+                <ul style="margin:0;padding-left:16px;font-size:0.9em;color:#d1d5db;">
+                    <li>Increase monthly touches by 4 to reach the Platinum tier target of 8/mo</li><li>Client hasn't been contacted in 22 days — schedule re-engagement within 48 hours</li><li>Improve average response time from 8h to under 2h target</li>
+                </ul>
+                <p style="margin:8px 0 0;font-size:0.85em;color:#60a5fa;"><strong>Next:</strong> Personal re-engagement email + phone call</p>
+            </td>
+        </tr><tr>
+            <td style="padding:12px;border-bottom:1px solid #1f2937;">
+                <strong>Evergreen Nonprofit</strong><br>
+                <span style="font-size:0.85em;color:#9ca3af;">Bronze · $800/mo</span>
+            </td>
+            <td style="padding:12px;border-bottom:1px solid #1f2937;text-align:center;">
+                <span style="display:inline-block;padding:4px 12px;border-radius:12px;font-size:0.85em;font-weight:600;background:#dc262620;color:#dc2626;">
+                    Critical — Immediate Attention
+                </span>
+            </td>
+            <td style="padding:12px;border-bottom:1px solid #1f2937;text-align:center;">
+                <div style="position:relative;width:60px;height:60px;margin:0 auto;">
+                    <svg viewBox="0 0 36 36" style="width:60px;height:60px;">
+                        <circle cx="18" cy="18" r="15.9" fill="none" stroke="#1f2937" stroke-width="3"/>
+                        <circle cx="18" cy="18" r="15.9" fill="none" stroke="#dc2626" stroke-width="3"
+                            stroke-dasharray="100, 100" stroke-linecap="round" transform="rotate(-90 18 18)"/>
+                    </svg>
+                    <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:1em;font-weight:700;color:#dc2626;">100</div>
+                </div>
+            </td>
+            <td style="padding:12px;border-bottom:1px solid #1f2937;text-align:center;">
+                1 / 2<br>
+                <span style="font-size:0.85em;color:#9ca3af;">28d gap</span>
+            </td>
+            <td style="padding:12px;border-bottom:1px solid #1f2937;text-align:center;">
+                <span style="display:inline-block;font-size:1.2em;color:#dc2626">&#9733;&#9734;&#9734;&#9734;&#9734;</span><br>
+                <span style="font-size:0.85em;color:#9ca3af;">3.5/10</span>
+            </td>
+            <td style="padding:12px;border-bottom:1px solid #1f2937;">
+                <ul style="margin:0;padding-left:16px;font-size:0.9em;color:#d1d5db;">
+                    <li>Increase monthly touches by 1 to reach the Bronze tier target of 2/mo</li><li>Client hasn't been contacted in 28 days — schedule re-engagement within 48 hours</li><li>Improve average response time from 48h to under 24h target</li>
+                </ul>
+                <p style="margin:8px 0 0;font-size:0.85em;color:#60a5fa;"><strong>Next:</strong> Personal re-engagement email + phone call</p>
+            </td>
+        </tr><tr>
+            <td style="padding:12px;border-bottom:1px solid #1f2937;">
+                <strong>Ironclad Insurance Group</strong><br>
+                <span style="font-size:0.85em;color:#9ca3af;">Gold · $5600/mo</span>
+            </td>
+            <td style="padding:12px;border-bottom:1px solid #1f2937;text-align:center;">
+                <span style="display:inline-block;padding:4px 12px;border-radius:12px;font-size:0.85em;font-weight:600;background:#ea580c20;color:#ea580c;">
+                    High Risk
+                </span>
+            </td>
+            <td style="padding:12px;border-bottom:1px solid #1f2937;text-align:center;">
+                <div style="position:relative;width:60px;height:60px;margin:0 auto;">
+                    <svg viewBox="0 0 36 36" style="width:60px;height:60px;">
+                        <circle cx="18" cy="18" r="15.9" fill="none" stroke="#1f2937" stroke-width="3"/>
+                        <circle cx="18" cy="18" r="15.9" fill="none" stroke="#ea580c" stroke-width="3"
+                            stroke-dasharray="100, 100" stroke-linecap="round" transform="rotate(-90 18 18)"/>
+                    </svg>
+                    <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:1em;font-weight:700;color:#ea580c;">100</div>
+                </div>
+            </td>
+            <td style="padding:12px;border-bottom:1px solid #1f2937;text-align:center;">
+                3 / 5<br>
+                <span style="font-size:0.85em;color:#9ca3af;">18d gap</span>
+            </td>
+            <td style="padding:12px;border-bottom:1px solid #1f2937;text-align:center;">
+                <span style="display:inline-block;font-size:1.2em;color:#ca8a04">&#9733;&#9733;&#9734;&#9734;&#9734;</span><br>
+                <span style="font-size:0.85em;color:#9ca3af;">5.0/10</span>
+            </td>
+            <td style="padding:12px;border-bottom:1px solid #1f2937;">
+                <ul style="margin:0;padding-left:16px;font-size:0.9em;color:#d1d5db;">
+                    <li>Increase monthly touches by 2 to reach the Gold tier target of 5/mo</li><li>Client hasn't been contacted in 18 days — schedule re-engagement within 48 hours</li><li>Improve average response time from 12h to under 4h target</li>
+                </ul>
+                <p style="margin:8px 0 0;font-size:0.85em;color:#60a5fa;"><strong>Next:</strong> Personal re-engagement email + phone call</p>
+            </td>
+        </tr><tr>
+            <td style="padding:12px;border-bottom:1px solid #1f2937;">
+                <strong>Kairos Media Agency</strong><br>
+                <span style="font-size:0.85em;color:#9ca3af;">Bronze · $1100/mo</span>
+            </td>
+            <td style="padding:12px;border-bottom:1px solid #1f2937;text-align:center;">
+                <span style="display:inline-block;padding:4px 12px;border-radius:12px;font-size:0.85em;font-weight:600;background:#dc262620;color:#dc2626;">
+                    Critical — Immediate Attention
+                </span>
+            </td>
+            <td style="padding:12px;border-bottom:1px solid #1f2937;text-align:center;">
+                <div style="position:relative;width:60px;height:60px;margin:0 auto;">
+                    <svg viewBox="0 0 36 36" style="width:60px;height:60px;">
+                        <circle cx="18" cy="18" r="15.9" fill="none" stroke="#1f2937" stroke-width="3"/>
+                        <circle cx="18" cy="18" r="15.9" fill="none" stroke="#dc2626" stroke-width="3"
+                            stroke-dasharray="100, 100" stroke-linecap="round" transform="rotate(-90 18 18)"/>
+                    </svg>
+                    <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:1em;font-weight:700;color:#dc2626;">100</div>
+                </div>
+            </td>
+            <td style="padding:12px;border-bottom:1px solid #1f2937;text-align:center;">
+                0 / 2<br>
+                <span style="font-size:0.85em;color:#9ca3af;">35d gap</span>
+            </td>
+            <td style="padding:12px;border-bottom:1px solid #1f2937;text-align:center;">
+                <span style="display:inline-block;font-size:1.2em;color:#dc2626">&#9733;&#9734;&#9734;&#9734;&#9734;</span><br>
+                <span style="font-size:0.85em;color:#9ca3af;">2.0/10</span>
+            </td>
+            <td style="padding:12px;border-bottom:1px solid #1f2937;">
+                <ul style="margin:0;padding-left:16px;font-size:0.9em;color:#d1d5db;">
+                    <li>Increase monthly touches by 2 to reach the Bronze tier target of 2/mo</li><li>Client hasn't been contacted in 35 days — schedule re-engagement within 48 hours</li><li>Improve average response time from 72h to under 24h target</li>
+                </ul>
+                <p style="margin:8px 0 0;font-size:0.85em;color:#60a5fa;"><strong>Next:</strong> Personal re-engagement email + phone call</p>
+            </td>
+        </tr><tr>
+            <td style="padding:12px;border-bottom:1px solid #1f2937;">
+                <strong>Coastal Retail Group</strong><br>
+                <span style="font-size:0.85em;color:#9ca3af;">Silver · $1800/mo</span>
+            </td>
+            <td style="padding:12px;border-bottom:1px solid #1f2937;text-align:center;">
+                <span style="display:inline-block;padding:4px 12px;border-radius:12px;font-size:0.85em;font-weight:600;background:#ea580c20;color:#ea580c;">
+                    High Risk
+                </span>
+            </td>
+            <td style="padding:12px;border-bottom:1px solid #1f2937;text-align:center;">
+                <div style="position:relative;width:60px;height:60px;margin:0 auto;">
+                    <svg viewBox="0 0 36 36" style="width:60px;height:60px;">
+                        <circle cx="18" cy="18" r="15.9" fill="none" stroke="#1f2937" stroke-width="3"/>
+                        <circle cx="18" cy="18" r="15.9" fill="none" stroke="#ea580c" stroke-width="3"
+                            stroke-dasharray="44, 100" stroke-linecap="round" transform="rotate(-90 18 18)"/>
+                    </svg>
+                    <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:1em;font-weight:700;color:#ea580c;">44</div>
+                </div>
+            </td>
+            <td style="padding:12px;border-bottom:1px solid #1f2937;text-align:center;">
+                2 / 3<br>
+                <span style="font-size:0.85em;color:#9ca3af;">14d gap</span>
+            </td>
+            <td style="padding:12px;border-bottom:1px solid #1f2937;text-align:center;">
+                <span style="display:inline-block;font-size:1.2em;color:#ca8a04">&#9733;&#9733;&#9733;&#9734;&#9734;</span><br>
+                <span style="font-size:0.85em;color:#9ca3af;">6.8/10</span>
+            </td>
+            <td style="padding:12px;border-bottom:1px solid #1f2937;">
+                <ul style="margin:0;padding-left:16px;font-size:0.9em;color:#d1d5db;">
+                    <li>Increase monthly touches by 1 to reach the Silver tier target of 3/mo</li><li>Client hasn't been contacted in 14 days — schedule re-engagement within 48 hours</li>
+                </ul>
+                <p style="margin:8px 0 0;font-size:0.85em;color:#60a5fa;"><strong>Next:</strong> Value-add email (case study, tip, industry insight)</p>
+            </td>
+        </tr><tr>
+            <td style="padding:12px;border-bottom:1px solid #1f2937;">
+                <strong>Luna Tech Startups Inc.</strong><br>
+                <span style="font-size:0.85em;color:#9ca3af;">Gold · $3800/mo</span>
+            </td>
+            <td style="padding:12px;border-bottom:1px solid #1f2937;text-align:center;">
+                <span style="display:inline-block;padding:4px 12px;border-radius:12px;font-size:0.85em;font-weight:600;background:#16a34a20;color:#16a34a;">
+                    Low Risk
+                </span>
+            </td>
+            <td style="padding:12px;border-bottom:1px solid #1f2937;text-align:center;">
+                <div style="position:relative;width:60px;height:60px;margin:0 auto;">
+                    <svg viewBox="0 0 36 36" style="width:60px;height:60px;">
+                        <circle cx="18" cy="18" r="15.9" fill="none" stroke="#1f2937" stroke-width="3"/>
+                        <circle cx="18" cy="18" r="15.9" fill="none" stroke="#16a34a" stroke-width="3"
+                            stroke-dasharray="26, 100" stroke-linecap="round" transform="rotate(-90 18 18)"/>
+                    </svg>
+                    <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:1em;font-weight:700;color:#16a34a;">26</div>
+                </div>
+            </td>
+            <td style="padding:12px;border-bottom:1px solid #1f2937;text-align:center;">
+                5 / 5<br>
+                <span style="font-size:0.85em;color:#9ca3af;">7d gap</span>
+            </td>
+            <td style="padding:12px;border-bottom:1px solid #1f2937;text-align:center;">
+                <span style="display:inline-block;font-size:1.2em;color:#16a34a">&#9733;&#9733;&#9733;&#9734;&#9734;</span><br>
+                <span style="font-size:0.85em;color:#9ca3af;">7.2/10</span>
+            </td>
+            <td style="padding:12px;border-bottom:1px solid #1f2937;">
+                <ul style="margin:0;padding-left:16px;font-size:0.9em;color:#d1d5db;">
+                    <li>Expand to ['email', 'phone'] channels beyond just email, phone</li>
+                </ul>
+                <p style="margin:8px 0 0;font-size:0.85em;color:#60a5fa;"><strong>Next:</strong> Scheduled check-in (on track)</p>
+            </td>
+        </tr><tr>
+            <td style="padding:12px;border-bottom:1px solid #1f2937;">
+                <strong>GreenLeaf Consulting</strong><br>
+                <span style="font-size:0.85em;color:#9ca3af;">Silver · $2200/mo</span>
+            </td>
+            <td style="padding:12px;border-bottom:1px solid #1f2937;text-align:center;">
+                <span style="display:inline-block;padding:4px 12px;border-radius:12px;font-size:0.85em;font-weight:600;background:#16a34a20;color:#16a34a;">
+                    Low Risk
+                </span>
+            </td>
+            <td style="padding:12px;border-bottom:1px solid #1f2937;text-align:center;">
+                <div style="position:relative;width:60px;height:60px;margin:0 auto;">
+                    <svg viewBox="0 0 36 36" style="width:60px;height:60px;">
+                        <circle cx="18" cy="18" r="15.9" fill="none" stroke="#1f2937" stroke-width="3"/>
+                        <circle cx="18" cy="18" r="15.9" fill="none" stroke="#16a34a" stroke-width="3"
+                            stroke-dasharray="20, 100" stroke-linecap="round" transform="rotate(-90 18 18)"/>
+                    </svg>
+                    <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:1em;font-weight:700;color:#16a34a;">20</div>
+                </div>
+            </td>
+            <td style="padding:12px;border-bottom:1px solid #1f2937;text-align:center;">
+                3 / 3<br>
+                <span style="font-size:0.85em;color:#9ca3af;">8d gap</span>
+            </td>
+            <td style="padding:12px;border-bottom:1px solid #1f2937;text-align:center;">
+                <span style="display:inline-block;font-size:1.2em;color:#16a34a">&#9733;&#9733;&#9733;&#9734;&#9734;</span><br>
+                <span style="font-size:0.85em;color:#9ca3af;">7.5/10</span>
+            </td>
+            <td style="padding:12px;border-bottom:1px solid #1f2937;">
+                <ul style="margin:0;padding-left:16px;font-size:0.9em;color:#d1d5db;">
+                    <li>Client hasn't been contacted in 8 days — schedule re-engagement within 48 hours</li>
+                </ul>
+                <p style="margin:8px 0 0;font-size:0.85em;color:#60a5fa;"><strong>Next:</strong> Scheduled check-in (on track)</p>
+            </td>
+        </tr><tr>
+            <td style="padding:12px;border-bottom:1px solid #1f2937;">
+                <strong>Jupiter E-Commerce</strong><br>
+                <span style="font-size:0.85em;color:#9ca3af;">Silver · $1600/mo</span>
+            </td>
+            <td style="padding:12px;border-bottom:1px solid #1f2937;text-align:center;">
+                <span style="display:inline-block;padding:4px 12px;border-radius:12px;font-size:0.85em;font-weight:600;background:#05966920;color:#059669;">
+                    Healthy
+                </span>
+            </td>
+            <td style="padding:12px;border-bottom:1px solid #1f2937;text-align:center;">
+                <div style="position:relative;width:60px;height:60px;margin:0 auto;">
+                    <svg viewBox="0 0 36 36" style="width:60px;height:60px;">
+                        <circle cx="18" cy="18" r="15.9" fill="none" stroke="#1f2937" stroke-width="3"/>
+                        <circle cx="18" cy="18" r="15.9" fill="none" stroke="#059669" stroke-width="3"
+                            stroke-dasharray="17, 100" stroke-linecap="round" transform="rotate(-90 18 18)"/>
+                    </svg>
+                    <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:1em;font-weight:700;color:#059669;">17</div>
+                </div>
+            </td>
+            <td style="padding:12px;border-bottom:1px solid #1f2937;text-align:center;">
+                4 / 3<br>
+                <span style="font-size:0.85em;color:#9ca3af;">6d gap</span>
+            </td>
+            <td style="padding:12px;border-bottom:1px solid #1f2937;text-align:center;">
+                <span style="display:inline-block;font-size:1.2em;color:#16a34a">&#9733;&#9733;&#9733;&#9734;&#9734;</span><br>
+                <span style="font-size:0.85em;color:#9ca3af;">7.8/10</span>
+            </td>
+            <td style="padding:12px;border-bottom:1px solid #1f2937;">
+                <ul style="margin:0;padding-left:16px;font-size:0.9em;color:#d1d5db;">
+                    <li style="color:#16a34a;">&#10003; On track</li>
+                </ul>
+                <p style="margin:8px 0 0;font-size:0.85em;color:#60a5fa;"><strong>Next:</strong> Scheduled check-in (on track)</p>
+            </td>
+        </tr><tr>
+            <td style="padding:12px;border-bottom:1px solid #1f2937;">
+                <strong>Fusion Tech Ventures</strong><br>
+                <span style="font-size:0.85em;color:#9ca3af;">Gold · $3500/mo</span>
+            </td>
+            <td style="padding:12px;border-bottom:1px solid #1f2937;text-align:center;">
+                <span style="display:inline-block;padding:4px 12px;border-radius:12px;font-size:0.85em;font-weight:600;background:#05966920;color:#059669;">
+                    Healthy
+                </span>
+            </td>
+            <td style="padding:12px;border-bottom:1px solid #1f2937;text-align:center;">
+                <div style="position:relative;width:60px;height:60px;margin:0 auto;">
+                    <svg viewBox="0 0 36 36" style="width:60px;height:60px;">
+                        <circle cx="18" cy="18" r="15.9" fill="none" stroke="#1f2937" stroke-width="3"/>
+                        <circle cx="18" cy="18" r="15.9" fill="none" stroke="#059669" stroke-width="3"
+                            stroke-dasharray="15, 100" stroke-linecap="round" transform="rotate(-90 18 18)"/>
+                    </svg>
+                    <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:1em;font-weight:700;color:#059669;">15</div>
+                </div>
+            </td>
+            <td style="padding:12px;border-bottom:1px solid #1f2937;text-align:center;">
+                7 / 5<br>
+                <span style="font-size:0.85em;color:#9ca3af;">4d gap</span>
+            </td>
+            <td style="padding:12px;border-bottom:1px solid #1f2937;text-align:center;">
+                <span style="display:inline-block;font-size:1.2em;color:#16a34a">&#9733;&#9733;&#9733;&#9733;&#9734;</span><br>
+                <span style="font-size:0.85em;color:#9ca3af;">8.0/10</span>
+            </td>
+            <td style="padding:12px;border-bottom:1px solid #1f2937;">
+                <ul style="margin:0;padding-left:16px;font-size:0.9em;color:#d1d5db;">
+                    <li>Client is in great standing — explore upsell/expansion opportunity</li>
+                </ul>
+                <p style="margin:8px 0 0;font-size:0.85em;color:#60a5fa;"><strong>Next:</strong> Scheduled check-in (on track)</p>
+            </td>
+        </tr><tr>
+            <td style="padding:12px;border-bottom:1px solid #1f2937;">
+                <strong>BrightStar Marketing</strong><br>
+                <span style="font-size:0.85em;color:#9ca3af;">Gold · $4200/mo</span>
+            </td>
+            <td style="padding:12px;border-bottom:1px solid #1f2937;text-align:center;">
+                <span style="display:inline-block;padding:4px 12px;border-radius:12px;font-size:0.85em;font-weight:600;background:#05966920;color:#059669;">
+                    Healthy
+                </span>
+            </td>
+            <td style="padding:12px;border-bottom:1px solid #1f2937;text-align:center;">
+                <div style="position:relative;width:60px;height:60px;margin:0 auto;">
+                    <svg viewBox="0 0 36 36" style="width:60px;height:60px;">
+                        <circle cx="18" cy="18" r="15.9" fill="none" stroke="#1f2937" stroke-width="3"/>
+                        <circle cx="18" cy="18" r="15.9" fill="none" stroke="#059669" stroke-width="3"
+                            stroke-dasharray="12, 100" stroke-linecap="round" transform="rotate(-90 18 18)"/>
+                    </svg>
+                    <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:1em;font-weight:700;color:#059669;">12</div>
+                </div>
+            </td>
+            <td style="padding:12px;border-bottom:1px solid #1f2937;text-align:center;">
+                6 / 5<br>
+                <span style="font-size:0.85em;color:#9ca3af;">5d gap</span>
+            </td>
+            <td style="padding:12px;border-bottom:1px solid #1f2937;text-align:center;">
+                <span style="display:inline-block;font-size:1.2em;color:#16a34a">&#9733;&#9733;&#9733;&#9733;&#9734;</span><br>
+                <span style="font-size:0.85em;color:#9ca3af;">8.5/10</span>
+            </td>
+            <td style="padding:12px;border-bottom:1px solid #1f2937;">
+                <ul style="margin:0;padding-left:16px;font-size:0.9em;color:#d1d5db;">
+                    <li>Client is in great standing — explore upsell/expansion opportunity</li>
+                </ul>
+                <p style="margin:8px 0 0;font-size:0.85em;color:#60a5fa;"><strong>Next:</strong> Scheduled check-in (on track)</p>
+            </td>
+        </tr><tr>
+            <td style="padding:12px;border-bottom:1px solid #1f2937;">
+                <strong>Acme SaaS Solutions</strong><br>
+                <span style="font-size:0.85em;color:#9ca3af;">Platinum · $8500/mo</span>
+            </td>
+            <td style="padding:12px;border-bottom:1px solid #1f2937;text-align:center;">
+                <span style="display:inline-block;padding:4px 12px;border-radius:12px;font-size:0.85em;font-weight:600;background:#05966920;color:#059669;">
+                    Healthy
+                </span>
+            </td>
+            <td style="padding:12px;border-bottom:1px solid #1f2937;text-align:center;">
+                <div style="position:relative;width:60px;height:60px;margin:0 auto;">
+                    <svg viewBox="0 0 36 36" style="width:60px;height:60px;">
+                        <circle cx="18" cy="18" r="15.9" fill="none" stroke="#1f2937" stroke-width="3"/>
+                        <circle cx="18" cy="18" r="15.9" fill="none" stroke="#059669" stroke-width="3"
+                            stroke-dasharray="7, 100" stroke-linecap="round" transform="rotate(-90 18 18)"/>
+                    </svg>
+                    <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:1em;font-weight:700;color:#059669;">7</div>
+                </div>
+            </td>
+            <td style="padding:12px;border-bottom:1px solid #1f2937;text-align:center;">
+                9 / 8<br>
+                <span style="font-size:0.85em;color:#9ca3af;">3d gap</span>
+            </td>
+            <td style="padding:12px;border-bottom:1px solid #1f2937;text-align:center;">
+                <span style="display:inline-block;font-size:1.2em;color:#16a34a">&#9733;&#9733;&#9733;&#9733;&#9734;</span><br>
+                <span style="font-size:0.85em;color:#9ca3af;">9.2/10</span>
+            </td>
+            <td style="padding:12px;border-bottom:1px solid #1f2937;">
+                <ul style="margin:0;padding-left:16px;font-size:0.9em;color:#d1d5db;">
+                    <li>Client is in great standing — explore upsell/expansion opportunity</li>
+                </ul>
+                <p style="margin:8px 0 0;font-size:0.85em;color:#60a5fa;"><strong>Next:</strong> Scheduled check-in (on track)</p>
+            </td>
+        </tr><tr>
+            <td style="padding:12px;border-bottom:1px solid #1f2937;">
+                <strong>Horizon Health AI</strong><br>
+                <span style="font-size:0.85em;color:#9ca3af;">Platinum · $15000/mo</span>
+            </td>
+            <td style="padding:12px;border-bottom:1px solid #1f2937;text-align:center;">
+                <span style="display:inline-block;padding:4px 12px;border-radius:12px;font-size:0.85em;font-weight:600;background:#05966920;color:#059669;">
+                    Healthy
+                </span>
+            </td>
+            <td style="padding:12px;border-bottom:1px solid #1f2937;text-align:center;">
+                <div style="position:relative;width:60px;height:60px;margin:0 auto;">
+                    <svg viewBox="0 0 36 36" style="width:60px;height:60px;">
+                        <circle cx="18" cy="18" r="15.9" fill="none" stroke="#1f2937" stroke-width="3"/>
+                        <circle cx="18" cy="18" r="15.9" fill="none" stroke="#059669" stroke-width="3"
+                            stroke-dasharray="2, 100" stroke-linecap="round" transform="rotate(-90 18 18)"/>
+                    </svg>
+                    <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:1em;font-weight:700;color:#059669;">2</div>
+                </div>
+            </td>
+            <td style="padding:12px;border-bottom:1px solid #1f2937;text-align:center;">
+                10 / 8<br>
+                <span style="font-size:0.85em;color:#9ca3af;">1d gap</span>
+            </td>
+            <td style="padding:12px;border-bottom:1px solid #1f2937;text-align:center;">
+                <span style="display:inline-block;font-size:1.2em;color:#16a34a">&#9733;&#9733;&#9733;&#9733;&#9734;</span><br>
+                <span style="font-size:0.85em;color:#9ca3af;">9.8/10</span>
+            </td>
+            <td style="padding:12px;border-bottom:1px solid #1f2937;">
+                <ul style="margin:0;padding-left:16px;font-size:0.9em;color:#d1d5db;">
+                    <li>Client is in great standing — explore upsell/expansion opportunity</li>
+                </ul>
+                <p style="margin:8px 0 0;font-size:0.85em;color:#60a5fa;"><strong>Next:</strong> Scheduled check-in (on track)</p>
+            </td>
+        </tr></tbody>
+</table>
+
+<div class="footer">
+    Generated by Agency Client Communication Intelligence Tool v1.0.0 | Run <code>python3 2026-07-18_ai_client_communication_intelligence.py --help</code> for CLI options
+</div>
+</div>
+</body>
+</html>
